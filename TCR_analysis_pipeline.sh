@@ -25,9 +25,9 @@ Convert=FALSE
 while getopts 'hci:o:t:m:' OPT; do
 	case ${OPT} in
        	c)
-			Convert=TRUE
-			echo -e "\nFirst transfer the input file to vdjtools format"
-			;;
+		Convert=TRUE
+		echo -e "\nFirst transfer the input file to vdjtools format"
+		;;
       	i)
         	data_dir=${OPTARG}
         	n_para=$[$n_para + 1]
@@ -41,16 +41,16 @@ while getopts 'hci:o:t:m:' OPT; do
 	        n_para=$[$n_para + 1]
 	        ;;
       	m)
-			metadata=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
+		metadata=${OPTARG}
+		n_para=$[$n_para + 1]
+		;;
       	h)
        		Help
        		exit 0
         	;;
       	*)
-			echo -e "\nERROR: Unrecognized parameter. Please check it carefully!"
-			Help
+		echo -e "\nERROR: Unrecognized parameter. Please check it carefully!"
+		Help
 	        exit 1
 	        ;;
     esac
