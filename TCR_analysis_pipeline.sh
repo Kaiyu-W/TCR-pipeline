@@ -29,30 +29,30 @@ while getopts 'hci:o:t:m:' OPT; do
 			echo -e "\nFirst transfer the input file to vdjtools format"
 			;;
       	i)
-        	data_dir=${OPTARG}
-        	n_para=$[$n_para + 1]
-        	;;
+			data_dir=${OPTARG}
+			n_para=$[$n_para + 1]
+			;;
       	o)
-	        res_dir=${OPTARG}
-	        n_para=$[$n_para + 1]
-	        ;;
+			res_dir=${OPTARG}
+			n_para=$[$n_para + 1]
+			;;
       	t)
-	        VDJ_type=${OPTARG}
-	        n_para=$[$n_para + 1]
-	        ;;
+			VDJ_type=${OPTARG}
+			n_para=$[$n_para + 1]
+			;;
       	m)
 			metadata=${OPTARG}
 			n_para=$[$n_para + 1]
-		;;
+			;;
       	h)
-       		Help
-       		exit 0
-        	;;
+			Help
+			exit 0
+			;;
       	*)
 			echo -e "\nERROR: Unrecognized parameter. Please check it carefully!"
 			Help
-	        exit 1
-	        ;;
+			exit 1
+			;;
     esac
 done
 if [ $n_para -ne 4 ]; then
