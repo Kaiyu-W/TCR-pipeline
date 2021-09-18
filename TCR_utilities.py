@@ -14,7 +14,7 @@ def Richness_BarPlot(basicstats_file, meta_file, output_path, show = True, save 
         if info[0] != meta_Sample:
             if str(info[1]) == Group1:
                 list_pos.append(info[0])
-    # 
+                
     list_class = []
     list_sample = []
     list_richness = []
@@ -27,7 +27,7 @@ def Richness_BarPlot(basicstats_file, meta_file, output_path, show = True, save 
                 list_class.append(Group2)
             list_sample.append(info[0].split('.')[0])
             list_richness.append(float(info[3]))
-    # 
+            
     ax1 = sns.barplot(x = list_class, y = list_richness, capsize = .2, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax1_1 = sns.stripplot(x = list_class, y = list_richness, size = 5, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax1.spines['top'].set_visible(False)
@@ -37,7 +37,7 @@ def Richness_BarPlot(basicstats_file, meta_file, output_path, show = True, save 
     if show:
         plt.show()
     plt.close()
-    # 
+    
     ax2 = sns.barplot(x = list_sample, y = list_richness)
     ax2.set_xticklabels(ax2.get_xticklabels(), rotation = 45)
     ax2.spines['top'].set_visible(False)
@@ -70,7 +70,7 @@ def Length_BarPlot(input_path, meta_file, output_path, VDJ_type = 'ALL', show = 
                             dict_length_count[length] += 1
             dict_sample_LengthCount[id] = dict_length_count
             read_file.close()
-    # 
+            
     list_length=[]
     list_class=[]
     list_sample=[]
@@ -85,7 +85,7 @@ def Length_BarPlot(input_path, meta_file, output_path, VDJ_type = 'ALL', show = 
             else:
                 list_class.append(Group2)
             list_count.append(dict_length_count[length])
-    # 
+            
     ax1 = sns.barplot(x = list_length, y = list_count, hue = list_class, errwidth = 0.5, capsize = 0.5, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax1_1 = sns.stripplot(x = list_length, y = list_count, hue = list_class, size = 2, dodge = True, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax1.set_xticklabels(ax1.get_xticklabels(), rotation = 0, fontsize = 8)
@@ -96,7 +96,7 @@ def Length_BarPlot(input_path, meta_file, output_path, VDJ_type = 'ALL', show = 
     if show:
         plt.show()
     plt.close()
-    #
+    
     ax2 = sns.barplot(x = list_length, y = list_count, hue = list_sample, errwidth = 0.5, capsize = 0.5)
     ax2.set_xticklabels(ax2.get_xticklabels(), rotation = 0, fontsize = 8)
     ax2.spines['top'].set_visible(False)
@@ -140,14 +140,14 @@ def CountProportion_LappedBarPlot(input_path, meta_file, output_path, VDJ_type =
                 dict_read_count[key] = dict_read_count[key] / number_clonotypes * 100
             dict_sample_ReadsCounts[id] = dict_read_count
             read_file.close()
-    #
+            
     list_sample = []
     list_class = []
     list_read = []
     list_count = []
     dict_read_SampleCount = {'1': {},'2-3': {},'4-10': {},'11-30': {},'31-100': {},'101-MAX': {}}
     print(dict_sample_ReadsCounts)
-    #
+    
     for sample in dict_sample_ReadsCounts.keys():
         dict_read_count = dict_sample_ReadsCounts[sample]
         for read in dict_read_count.keys():
@@ -162,7 +162,7 @@ def CountProportion_LappedBarPlot(input_path, meta_file, output_path, VDJ_type =
             dict_sample_count = dict_read_SampleCount[read]
             dict_sample_count[sample] = count
             dict_read_SampleCount[read] = dict_sample_count
-    #
+            
     ax1 = sns.barplot(x=list_read,y=list_count,hue=list_class,errwidth=1,capsize=0.2,palette=(sns.xkcd_rgb["dark red"],sns.xkcd_rgb["marine blue"]))
     ax1_1 = sns.stripplot(x=list_read,y=list_count,hue=list_class,dodge=True,palette=(sns.xkcd_rgb["dark red"],sns.xkcd_rgb["marine blue"]))
     ax1.set_xticklabels(ax1.get_xticklabels(), rotation=0,fontsize=10)
@@ -173,7 +173,7 @@ def CountProportion_LappedBarPlot(input_path, meta_file, output_path, VDJ_type =
     if show:
         plt.show()
     plt.close()
-    #
+    
     fig,ax = plt.subplots()
     list_1 = []
     list_2_3 = []
@@ -243,7 +243,7 @@ def Abundance_Proportion_relatplot(input_path, meta_file, output_path, VDJ_type 
                         dict_abundance_richness[abundance] += 1
             dict_sample_AbundanceRichness[id] = dict_abundance_richness
             read_file.close()
-    #
+            
     list_abundance = []
     list_richniess = []
     list_sample = []
@@ -258,7 +258,7 @@ def Abundance_Proportion_relatplot(input_path, meta_file, output_path, VDJ_type 
                 list_class.append(Group2)
             list_abundance.append(int(abundance))
             list_richniess.append(int(dict_abundance_richness[abundance]))
-    #
+            
     ax = sns.lineplot(x = list_abundance, y = list_richniess, hue = list_sample, style = list_class)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
@@ -387,12 +387,12 @@ def diversity_evenness_clonality(input_path, meta_file, output_path, VDJ_type = 
                 else:
                     list_class.append(Group2)
             read_file.close()
-    #
+            
     factor_max = max(list_value[0::3])
     for i in range(len(list_value)):
         if i%3 == 0:
             list_value[i] = list_value[i] / factor_max
-    #
+            
     print(list_class)
     ax1 = sns.barplot(x = list_characteristic, y = list_value, hue = list_class, errwidth = 0.5, capsize = 0.3, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax1_1 = sns.stripplot(x = list_characteristic, y = list_value, size = 2, hue = list_class, dodge = True, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
@@ -408,7 +408,7 @@ def diversity_evenness_clonality(input_path, meta_file, output_path, VDJ_type = 
     if show:
         plt.show()
     plt.close()
-    #
+    
     ax2 = sns.violinplot(x = list_characteristic, y = list_value, hue = list_class, palette = ('white', 'white'))
     ax2_1 = sns.stripplot(x = list_characteristic, y = list_value, size = 4, hue = list_class, dodge = True, palette = (sns.xkcd_rgb["dark red"], sns.xkcd_rgb["marine blue"]))
     ax2.spines['top'].set_visible(False)
@@ -423,7 +423,7 @@ def diversity_evenness_clonality(input_path, meta_file, output_path, VDJ_type = 
     if show:
         plt.show()
     plt.close()
-    #
+    
     ax3 = sns.barplot(x = list_characteristic, y = list_value, hue = list_sample, errwidth = 0.5, capsize = 0.5)
     ax3.spines['top'].set_visible(False)
     ax3.spines['right'].set_visible(False)
@@ -442,13 +442,13 @@ def Build_VDJ_ExpMtx(input_path, VDJ_gene, meta_file, output_path, VDJ_type = 'A
     matrix_VDJ = output_path + '/matrix_' + VDJ_gene + '.txt'
     GeneIndex_dict = {'V':4, 'D':5, 'J':6}
     GeneIndex = GeneIndex_dict.get(VDJ_gene)
-    #
+    
     list_files = []
     for line in open(meta_file, 'r'):
         if line[0] != meta_Sample[0]:
             file=line.split('\t')[0]
             list_files.append(file + '.clonotypes.' + VDJ_type + '.txt')
-    #
+            
     list_sample = []
     list_VDJ = []
     list_dict_VDJ = []
@@ -470,7 +470,7 @@ def Build_VDJ_ExpMtx(input_path, VDJ_gene, meta_file, output_path, VDJ_type = 'A
                     dict_VDJ[name_VDJ] += 1
         list_dict_VDJ.append(dict_VDJ)
         read_file.close()
-    #
+        
     word = 'item'
     for sample in list_sample:
         word += '\t' + sample
@@ -496,7 +496,7 @@ def Build_VDJ_ExpMtx(input_path, VDJ_gene, meta_file, output_path, VDJ_type = 'A
 def Diffexp_VolcanoPlot(diffexp_result_VDJ, VDJ_gene, output_path, show = True, save = True):
     # first run R code with Deseq2 analysis
     output_file = output_path + 'diffexp_VolcanoPlot_' + VDJ_gene + '.pdf'
-    #
+    
     list_log2FC = []
     list_padj = []
     index_log2FC = 2
@@ -513,7 +513,7 @@ def Diffexp_VolcanoPlot(diffexp_result_VDJ, VDJ_gene, output_path, show = True, 
         number_row += 1
     foldchange = np.asarray(list_log2FC)
     pvalue = np.asarray(list_padj)
-    #
+    
     result = pd.DataFrame({'pvalue': pvalue, 'FoldChange': foldchange})
     result['log(pvalue)'] = -np.log10(result['pvalue'])
     result['sig'] = 'normal'
@@ -521,7 +521,7 @@ def Diffexp_VolcanoPlot(diffexp_result_VDJ, VDJ_gene, output_path, show = True, 
 
     result.loc[(result.FoldChange > 0) & (result.pvalue < 0.05), 'sig'] = 'up'
     result.loc[(result.FoldChange < 0) & (result.pvalue < 0.05), 'sig'] = 'down'
-    #
+    
     ax = sns.scatterplot(x = "FoldChange", y = "log(pvalue)", hue = 'sig', hue_order = ('up', 'down', 'normal'), palette = ("#E41A1C", "#377EB8", "grey"), data = result)
     ax.set_ylabel('-log10Padj', fontweight = 'bold')
     ax.set_xlabel('log2FoldChange', fontweight = 'bold')
@@ -535,14 +535,14 @@ def Diffexp_VolcanoPlot(diffexp_result_VDJ, VDJ_gene, output_path, show = True, 
 
 def Diffexp_Heatmap(diffexp_result_VDJ, VDJ_gene, meta_file, output_path, padj_thre = 0.05, logFC_thre = 0, show = True, save = True, meta_Sample = 'Sample', meta_Group = 'Group', Group1 = 'Cryo', Group2 = 'NonCryo'):
     output_file = output_path + 'diffexp_heatmap_' + VDJ_gene + '.pdf'
-    #
+    
     list_pos = []
     for line in open(meta_file,'r'):
         info = line[:-1].split('\t')
         if info[0] != meta_Sample:
             if str(info[1]) == Group1:
                 list_pos.append(info[0])
-    #
+                
     list_ids = []
     list_samples = []
     list_value_list = []
