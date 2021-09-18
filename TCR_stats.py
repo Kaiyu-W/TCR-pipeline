@@ -59,10 +59,10 @@ plt.rcParams['figure.figsize'] = (10.0, 10.0)
 diff_analysis_r='/mnt/c/my_script/TCR_diff_analysis.r'
 
 # Examples:
-# input_path='./'#输入路径
-# output_path='./'#输出路径
-# sample_info='../metadata.txt'#记录有样本分组的样本信息
-# VDJType='ALL' #数据文件的VDJ类型
+# input_path='./'
+# output_path='./'
+# sample_info='../metadata.txt'
+# VDJType='ALL'
 
 myTCR.Richness_BarPlot(
     basicstats_file = input_path + 'basicstats.txt',
