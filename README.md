@@ -14,8 +14,10 @@ This version is named as `TCR_analysis_pipeline` in `main`, with processed codes
   
   
 ___Usage___:  
+```Shell
  _TCR_analysis_pipeline [options: -iotmvc/h]_  
-  
+```
+ 
  TCR analysis, with MiXCR/Cellranger result inputting, VDJTools and Custom R/Python analysis.  
  Make sure python packages 'Matplotlib/Seaborn/Numpy/Pandas' and R packages 'DESeq2/ggplot2' installed in your environment.  
  Here needs grouped Clonotypes files, as well as corresponding Metadata file for sample information.  
