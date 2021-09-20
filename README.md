@@ -25,11 +25,11 @@ ___Usage___:
 ___Options___:  
 | option | format | detail |  
 | ------ | ------ | ------ |  
-| -i | <data_dir> | Directory of input files, such like MixCR / Cellranger(processed) results |  
+| -i | <data_dir> | Directory of input files, such like MixCR / Cellranger (processed) results |  
 | -o | <res_dir> | Directory of output of TCR pipeline |  
 | -t | <VDJ_type> | VDJ type for analysis, choose from 'ALL IGH IGK IGL TRA TRB TRD TRG' |  
 | -m | <metadata_file> | Absolute Path of metadata file, including group infomation of samples |  
-| -v | <VDJTools_jar> | Path of VDJTools code file (.jar), and make sure Rpackages/ existed in the same directory |  
+| -v | <VDJTools_jar> | Path of VDJTools code file (.jar), and make sure directory 'Rpackages/' existed in the same directory |  
 | -c |  | use -c when format transformation from input to what vdjtools needs |  
 | -h |  | Help |  
   
