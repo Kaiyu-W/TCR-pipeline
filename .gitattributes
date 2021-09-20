@@ -1,4 +1,4 @@
-*.r linguist-language=R
-*.py linguist-language=Python
-*.jar linguist-language=Java
-*.sh linguist-language=Shell
+*.r linguist-language=r
+*.py linguist-language=python
+*.jar linguist-language=java
+*.sh linguist-language=shell
