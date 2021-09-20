@@ -32,7 +32,7 @@ ___Options___:
 | -h |  | Help |  
   
 ___Example___:  
-```Bash
+```Shell
  cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
  TCR_analysis_pipeline -i ./ -o ./temp_res/ -c -t ALL -m ../metadata.txt -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar  
 ```
