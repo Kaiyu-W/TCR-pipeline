@@ -37,4 +37,4 @@ ___Example___:
 More details please see the script. Please contact me if you need help.   
 I'll complete the workflow in the future if I have more time as well as skills, since it lacks the code that helps to install the dependent packages.
   
-Pipeline written by `Kaiyu Wang`, in SIBCB of CAS, Shanghai, in Sep 2021.  
+Pipeline written by __`Kaiyu Wang`__, in SIBCB of CAS, Shanghai, in Sep 2021.  
