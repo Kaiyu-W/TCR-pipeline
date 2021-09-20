@@ -14,7 +14,7 @@ This version is named as `TCR_analysis_pipeline` in `main`, with processed codes
   
   
 ___Usage___:  
- TCR_analysis_pipeline [options: -iotmvc/h]  
+ _TCR_analysis_pipeline [options: -iotmvc/h]_  
   
  TCR analysis, with MiXCR/Cellranger result inputting, VDJTools and Custom R/Python analysis.  
  Make sure python packages 'Matplotlib/Seaborn/Numpy/Pandas' and R packages 'DESeq2/ggplot2' installed in your environment.  
@@ -32,9 +32,10 @@ ___Options___:
 | -h |  | Help |  
   
 ___Example___:  
+```Bash
  cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
  TCR_analysis_pipeline -i ./ -o ./temp_res/ -c -t ALL -m ../metadata.txt -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar  
-  
+```
   
 More details please see the script. Please contact me if you need help.   
 I'll complete the workflow in the future if I have more time as well as skills, since it lacks the code that helps to install the dependent packages.
