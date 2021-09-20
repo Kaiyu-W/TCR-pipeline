@@ -12,14 +12,14 @@ However it needs to install `Rpackages/` into `/tmp/` __by hand__, or the plot f
 To solve this problem, it recommends that the users assign the path of vdjtools.jar by `-v option`, with `Rpackages/` that vdjtools depends on __in the same directory__.   
 This version is named as `TCR_analysis_pipeline` in `main`, with processed codes in `TCR/`.   
 
-_Usage_:
+___Usage___:
  TCR_analysis_pipeline [options: -iotmc/h]  
 
  TCR analysis, with MiXCR/Cellranger result inputting, VDJTools and Custom R/Python analysis.  
  Make sure python packages 'Matplotlib/Seaborn/Numpy/Pandas' and R packages 'DESeq2/ggplot2' installed in your environment.  
  Here needs grouped Clonotypes files, as well as corresponding Metadata file for sample information.  
 
-_Options_:  
+___Options___:  
  -i <data_dir>                 Directory of input files, such like MixCR / Cellranger(processed) results   
  -o <res_dir>                  Directory of output of TCR pipeline  
  -t <VDJ_type>                 VDJ type for analysis, choose from 'ALL IGH IGK IGL TRA TRB TRD TRG'  
@@ -28,7 +28,7 @@ _Options_:
  -c                            use -c when format transformation from input to what vdjtools needs  
  -h                            Help  
 
-_Example_:  
+___Example___:  
  cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
  TCR_analysis_pipeline -i ./ -o ./temp_res/ -c -t ALL -m ../metadata.txt -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar  
 
