@@ -96,7 +96,7 @@ vdjtools_patch=/tmp/vdjtools-patch.sh
 stats_py=/tmp/TCR_stats_tmp.py
 diff_analysis_r='/tmp/TCR_diff_analysis.r'
 
-skip=148
+skip=149
 sed "1,$skip d" $0 > /tmp/TCR_tmp.tar.gz
 tar -zxf /tmp/TCR_tmp.tar.gz -C /tmp/
 #####################
@@ -145,4 +145,5 @@ rm $vdjtools_patch
 rm $stats_py
 rm $diff_analysis_r
 rm /tmp/TCR_utilities.py
+exit 0
 #########################################
