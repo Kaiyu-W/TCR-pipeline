@@ -21,7 +21,8 @@ ___Usage___:
  Here needs grouped Clonotypes files, as well as corresponding Metadata file for sample information.  
   
 ___Options___:  
- -i <data_dir>                 Directory of input files, such like MixCR / Cellranger(processed) results   
+| option | format | detail |  
+| -i | <data_dir>          |       Directory of input files, such like MixCR / Cellranger(processed) results   |  
  -o <res_dir>                  Directory of output of TCR pipeline  
  -t <VDJ_type>                 VDJ type for analysis, choose from 'ALL IGH IGK IGL TRA TRB TRD TRG'  
  -m <metadata_file>            Absolute Path of metadata file, including group infomation of samples  
