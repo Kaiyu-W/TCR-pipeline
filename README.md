@@ -36,11 +36,12 @@ ___Options___:
 ___Example___:  
 ```Shell
  cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
- TCR_analysis_pipeline -i ./ \
- -o ./temp_res/ \
- -m ../metadata.txt \
- -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar \
- -c -t ALL
+ TCR_analysis_pipeline \
+                     -i ./ \
+                     -o ./temp_res/ \
+                     -m ../metadata.txt \
+                     -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar \
+                     -c -t ALL
 ```
   
 More details please see the script. Please contact me if you need help.   
