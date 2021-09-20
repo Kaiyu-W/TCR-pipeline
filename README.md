@@ -7,4 +7,4 @@ The way this script works is to unzip the temporary script into /tmp/, and delet
 
 More details please see the script.
 
-Pipeline Written by Kaiyu Wang, in SIBCB of CAS, Shanghai, in Sep 2021.
+Pipeline written by Kaiyu Wang, in SIBCB of CAS, Shanghai, in Sep 2021.
