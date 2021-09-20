@@ -8,7 +8,7 @@ The way this script works is to unzip the temporary script into __`/tmp/`__, and
 The `TCR_analysis_pipeline (version 0)` generated from package_process.sh in `TCR0/` includes `vdjtools`, which means it'll have no need for configuration of vdjtools.  
 However it needs to install `Rpackages/` into `/tmp/` __by hand__, or the plot function will not work successfully.  
 
-To solve this problem, it recommends that the users assign the path of vdjtools.jar by `-v option` with `Rpackages/` that vdjtools depends on __in the same directory__.   
+To solve this problem, it recommends that the users assign the path of vdjtools.jar by `-v option`, with `Rpackages/` that vdjtools depends on __in the same directory__.   
 This version is named as `TCR_analysis_pipeline` in `main`, with processed codes in `TCR/`.   
 
 More details please see the script. Please contact me if you need help.   
