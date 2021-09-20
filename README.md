@@ -5,6 +5,6 @@ It needs `Java`, `Python`, `R`, each with extra packages `VDJTools`, `Numpy`/`Pa
 
 The way this script works is to unzip the temporary script into '/tmp/', and delete that at the end of the program.
 
-More details please see the script.
+More details please see the script. Please contact me if you need help.
 
 Pipeline written by `Kaiyu Wang`, in SIBCB of CAS, Shanghai, in Sep 2021.
