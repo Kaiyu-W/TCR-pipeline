@@ -10,7 +10,7 @@ The `TCR_analysis_pipeline (version 0)` generated from package_process.sh in `TC
 However it needs to install `Rpackages/` into `/tmp/` __by hand__, or the plot function will not work successfully.  
   
 To solve this problem, it recommends that the users assign the path of vdjtools.jar by `-v option`, with `Rpackages/` that vdjtools depends on __in the same directory__.   
-This version is named as `TCR_analysis_pipeline` in `main`, with processed codes in `TCR/`.   
+This version is named as `TCR_analysis_pipeline` in `main`, with preprocessed codes in `TCR/`.   
   
   
 ___Usage___:  
