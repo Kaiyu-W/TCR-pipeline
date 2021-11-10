@@ -35,8 +35,30 @@ ___Options___:
   
 ___Example___:  
 ```Shell
- cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
- TCR_analysis_pipeline -i ./                                       \
+$cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
+$ls -l *txt  
+   
+-rwxrwxrwx 1 wky wky 5460960 Sep  8 20:54 CryoTCR_1.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 5491474 Sep  8 20:54 CryoTCR_2.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 5321901 Sep  8 20:54 CryoTCR_3.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 5462734 Sep  8 20:54 CryoTCR_4.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 4713741 Sep  8 20:54 NonCryoTCR_1.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 4776696 Sep  8 20:54 NonCryoTCR_2.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 4946934 Sep  8 20:54 NonCryoTCR_3.clonotypes.ALL.txt  
+-rwxrwxrwx 1 wky wky 4939794 Sep  8 20:54 NonCryoTCR_4.clonotypes.ALL.txt  
+  
+$cat ../metadata.txt # tab delimiter  
+Sample  Group  
+CryoTCR_1       Cryo  
+CryoTCR_2       Cryo  
+CryoTCR_3       Cryo  
+CryoTCR_4       Cryo  
+NonCryoTCR_1    NonCryo  
+NonCryoTCR_2    NonCryo  
+NonCryoTCR_3    NonCryo  
+NonCryoTCR_4    NonCryo  
+  
+$TCR_analysis_pipeline -i ./                                       \
                        -o ./temp_res/                              \
                        -m ../metadata.txt                          \
                        -v /mnt/c/vdjtools-1.2.1/vdjtools-1.2.1.jar \
