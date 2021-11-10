@@ -5,7 +5,7 @@
 
 # configure parameters received from shell
 Help() {
-	echo -e "\nUsage:\n TCR_analysis_pipeline [options: -iotmc/h]\n"
+	echo -e "\nUsage:\n TCR_analysis_pipeline [options: -iotmvc/h]\n"
 	echo " TCR analysis, with MiXCR/Cellranger result inputting, VDJTools and Custom R/Python analysis."
 	echo " Make sure python packages 'Matplotlib/Seaborn/Numpy/Pandas' and R packages 'DESeq2/ggplot2' installed in your environment."
 	echo -e " Here needs grouped Clonotypes files, as well as corresponding Metadata file for sample information.\n"
