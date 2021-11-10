@@ -35,6 +35,32 @@ ___Options___:
   
 ___Example___:  
 ```Shell
+# to prepare the input files from cellranger and mixcr output
+<!-- 
+# cellranger vdj process fastq into filter.fastq
+cd xxx
+for i in *_S1_L001_I1_001.fastq.gz; do
+	name=$( echo $i | sed "s/\(.*\)\(_S1_L001_I1_001.fastq.gz\)/\1/" )
+	cellranger vdj --id=$name \
+		--reference=refdata-cellranger-vdj-GRCm38-alts-ensembl-5.0.0 \
+		--fastqs=./ \
+		--sample=$name &
+done
+# mixcr process all filter.fastq
+for i in 1 2 3 4; do
+  for j in CryoTCR NonCryoTCR; do
+        analysis_name=${j}_${i}
+        input_file=${j}_${i}.filter.fastq
+        mixcr analyze amplicon \
+            -s mmu \
+            --starting-material rna \
+            --5-end no-v-primers --3-end c-primers \
+            --adapters adapters-present \
+            $input_file ./res/$analysis_name
+        echo $analysis_name OVER!
+done
+ -->
+ 
 $cd /mnt/e/Cryo-TCR/data/TCR_data/TCR_Raw_mixcr  
 $ls -l *txt  
    
