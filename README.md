@@ -58,6 +58,7 @@ for i in 1 2 3 4; do
             --adapters adapters-present \
             $input_file ./res/$analysis_name
         echo $analysis_name OVER!
+  done
 done
  -->
  
