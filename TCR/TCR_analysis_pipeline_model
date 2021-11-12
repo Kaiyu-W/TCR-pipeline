@@ -23,39 +23,14 @@ n_para=0
 Convert=FALSE
 while getopts 'hci:o:t:m:v:' OPT; do
 	case ${OPT} in
-		c)
-			Convert=TRUE
-			echo -e "\nOption -c works. The first step to transfer the input file to vdjtools format."
-			;;
-		i)
-			data_dir=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
-		o)
-			res_dir=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
-		t)
-			VDJ_type=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
-		m)
-			metadata=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
-		v)
-			vdjtools=${OPTARG}
-			n_para=$[$n_para + 1]
-			;;
-		h)
-			Help
-			exit 0
-			;;
-		*)
-			echo -e "\nERROR: Unrecognized parameter. Please check it carefully!"
-			Help
-			exit 1
-			;;
+		c) Convert=TRUE; echo -e "\nOption -c works. The first step to transfer the input file to vdjtools format." ;;
+		i) data_dir=${OPTARG}; n_para=$[$n_para + 1] ;;
+		o) res_dir=${OPTARG}; n_para=$[$n_para + 1] ;;
+		t) VDJ_type=${OPTARG}; n_para=$[$n_para + 1] ;;
+		m) metadata=${OPTARG}; n_para=$[$n_para + 1] ;;
+		v) vdjtools=${OPTARG}; n_para=$[$n_para + 1] ;;
+		h) Help; exit 0 ;;
+		*) echo -e "\nERROR: Unrecognized parameter. Please check it carefully!"; Help; exit 1 ;;
 	esac
 done
 if [ $n_para -ne 5 ]; then
@@ -107,7 +82,8 @@ vdjtools_patch=/tmp/vdjtools-patch.sh
 stats_py=/tmp/TCR_stats_tmp.py
 diff_analysis_r='/tmp/TCR_diff_analysis.r'
 
-skip=160
+trap "rm /tmp/TCR_tmp.tar.gz; rm $vdjtools_patch; rm $stats_py; rm $diff_analysis_r; rm /tmp/TCR_utilities.py; exit" HUP INT QUIT
+skip=137
 sed "1,$skip d" $0 > /tmp/TCR_tmp.tar.gz
 tar -zxf /tmp/TCR_tmp.tar.gz -C /tmp/
 #####################
@@ -119,7 +95,9 @@ tar -zxf /tmp/TCR_tmp.tar.gz -C /tmp/
 # 2. VDJTools process and plot
 # format convert
 if [[ $Convert == TRUE ]]; then
+	[ -f ./metadata.txt ] && mv ./metadata.txt ./metadata0.txt
 	java -jar $vdjtools Convert -S mixcr $data_dir/*.clonotypes.${VDJ_type}.txt $res_dir
+	[ -f ./metadata0.txt ] && mv ./metadata.txt ./metadata_vdjtools.txt && mv ./metadata0.txt ./metadata.txt
 else
 	cp $data_dir/*.clonotypes.${VDJ_type}.txt $res_dir
 fi
@@ -151,7 +129,6 @@ echo ${VDJ_type} OVER!
 
 #########################################
 rm /tmp/TCR_tmp.tar.gz
-rm $vdjtools
 rm $vdjtools_patch
 rm $stats_py
 rm $diff_analysis_r

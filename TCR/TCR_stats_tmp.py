@@ -65,9 +65,7 @@ myTCR.Richness_BarPlot(
     show = False,
     save = True,
     meta_Sample = 'Sample', 
-    meta_Group = 'Group', 
-    Group1 = 'Cryo', 
-    Group2 = 'NonCryo'
+    meta_Group = 'Group'
     )
 
 myTCR.Length_BarPlot(
@@ -78,9 +76,7 @@ myTCR.Length_BarPlot(
     show = False,
     save = True,
     meta_Sample = 'Sample', 
-    meta_Group = 'Group', 
-    Group1 = 'Cryo', 
-    Group2 = 'NonCryo'
+    meta_Group = 'Group'
     )
 
 myTCR.CountProportion_LappedBarPlot(
@@ -91,9 +87,7 @@ myTCR.CountProportion_LappedBarPlot(
     show = False, 
     save = True, 
     meta_Sample = 'Sample', 
-    meta_Group = 'Group', 
-    Group1 = 'Cryo', 
-    Group2 = 'NonCryo'
+    meta_Group = 'Group'
     )
 
 myTCR.Abundance_Proportion_relatplot(
@@ -104,9 +98,7 @@ myTCR.Abundance_Proportion_relatplot(
     show = False, 
     save = True, 
     meta_Sample = 'Sample', 
-    meta_Group = 'Group', 
-    Group1 = 'Cryo', 
-    Group2 = 'NonCryo'
+    meta_Group = 'Group'
     )
 
 myTCR.overlapped_CDR3_process(
@@ -129,9 +121,7 @@ myTCR.diversity_evenness_clonality(
     show = False, 
     save = True, 
     meta_Sample = 'Sample', 
-    meta_Group = 'Group', 
-    Group1 = 'Cryo', 
-    Group2 = 'NonCryo'
+    meta_Group = 'Group'
     )
 
 if os.path.exists(diff_analysis_r):
@@ -163,7 +153,5 @@ if os.path.exists(diff_analysis_r):
             show = False, 
             save = True, 
             meta_Sample = 'Sample',
-            meta_Group = 'Group', 
-            Group1 = 'Cryo', 
-            Group2 = 'NonCryo'
+            meta_Group = 'Group'
             )
